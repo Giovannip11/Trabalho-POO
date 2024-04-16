@@ -10,5 +10,14 @@ public class Ator {
     private String nome;
     private String papel;
     private List<Filme> f = new ArrayList();
+
+    public Ator(int idAtor, String nome, String papel) {
+        this.idAtor = idAtor;
+        this.nome = nome;
+        this.papel = papel;
+    }
+    
+   
+    
     
 }

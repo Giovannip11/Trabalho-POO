@@ -19,10 +19,23 @@ public class Sala {
         this.localizacao = localizacao;
         this.s = new ArrayList();
     }
-    public void addSessao(){
+    public void main(){
         
     }
-    public void removerSessao(){
+    public void menu(){
+        
+    }
+    public void addSessao(Sessao ss){
+        s.add(ss);
+    }
+    public void removerSessao(Sessao ss){
+        s.remove(ss);
+        
+    }
+    public void colsultarNumdeAssenteos(int numAssentos){
+        for (int i=0;i< s.size();i++){
+            InOut.MsgDeAviso("Números de assentos:", s.get(i).toString());
+        }
         
     }
     
