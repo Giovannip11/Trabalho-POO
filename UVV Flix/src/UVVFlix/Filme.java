@@ -11,6 +11,7 @@ public class Filme {
     public String duracao;
     public String genero;
     public List<Ator> a = new ArrayList();
+    public Sessao s;
 
     public Filme(int idFilme, String titulo, String duracao, String genero) {
         this.idFilme = idFilme;
