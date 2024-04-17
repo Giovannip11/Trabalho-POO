@@ -6,11 +6,11 @@ import java.util.List;
 
 
 public class Filme {
-    private int idFilme;
-    private String titulo;
-    private String duracao;
-    private String genero;
-    private List<Ator> a = new ArrayList();
+    public  int idFilme;
+    public String titulo;
+    public String duracao;
+    public String genero;
+    public List<Ator> a = new ArrayList();
 
     public Filme(int idFilme, String titulo, String duracao, String genero) {
         this.idFilme = idFilme;
@@ -24,10 +24,12 @@ public class Filme {
     public void addAtor (Ator at){
        a.add(at);
     }
-    public void mostrarAtores(Ator at){
-        for (int i = 0;i< a.size();i++){
-            InOut.MsgDeInformacao("Lista de Atores", a.get(i).toString());
+    public String mostrarAtores(){
+        StringBuilder listaAtores = new StringBuilder();
+        for (Ator ator : a) {
+            listaAtores.append(ator.nome).append(", ");
         }
+        return listaAtores.toString();
         
     }
 }

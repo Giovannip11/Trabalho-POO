@@ -6,11 +6,11 @@ import java.util.List;
 
 
 public class Sala {
-    private int idSala;
-    private int numAssentos;
-    private String tipoTela;
-    private String localizacao;
-    private List<Sessao> s = new ArrayList();
+    public int idSala;
+    public int numAssentos;
+    public String tipoTela;
+    public String localizacao;
+    public List<Sessao> s = new ArrayList();
 
     public Sala(int idSala, int numAssentos, String tipoTela, String localizacao) {
         this.idSala = idSala;
@@ -32,12 +32,7 @@ public class Sala {
         s.remove(ss);
         
     }
-    public void colsultarNumdeAssenteos(int numAssentos){
-        for (int i=0;i< s.size();i++){
-            InOut.MsgDeAviso("Números de assentos:", s.get(i).toString());
-        }
-        
-    }
+    
     
     
     

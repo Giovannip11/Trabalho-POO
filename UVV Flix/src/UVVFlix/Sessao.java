@@ -1,12 +1,14 @@
 
 package UVVFlix;
 
+import java.time.LocalTime;
+
 
 public class Sessao {
     
-        private boolean statusSessao;
-    private String horario;
-    private Sala s;
+    public boolean statusSessao;
+    public String horario;
+    public Sala s;
 
     public Sessao(boolean statusSessao, String horario, Sala s) {
         this.statusSessao = statusSessao;
@@ -17,15 +19,16 @@ public class Sessao {
     
     
     public void iniciarSessao(){
-        //horario de inicio\\
-        
+        InOut.MsgDeAviso("Status da Sessão", "A sessão está iniciando...");
     }
     public void terminarSessao(){
-        //horario de inicio + tempo de filme\\
+        InOut.MsgDeAviso("Status da Sessão", "A sessão está terminando...");
     }
     
     public void checarHorario(){
-        //horario do computador e cheque\\
+         LocalTime horarioAtual = LocalTime.now();
+        System.out.println("Horário atual: " + horarioAtual);
+        System.out.println("Horário da sessão: " + horario);
     }
    
 }
