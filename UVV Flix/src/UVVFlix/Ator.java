@@ -9,12 +9,16 @@ public class Ator {
     public int idAtor;
     public String nome;
     public String papel;
-    public List<Filme> f = new ArrayList();
+    public List<Filme> filmes = new ArrayList();
 
     public Ator(int idAtor, String nome, String papel) {
         this.idAtor = idAtor;
         this.nome = nome;
         this.papel = papel;
+         this.filmes = new ArrayList <>();
+    }
+    public void addFilme(Filme filme){
+        filmes.add(filme);
     }
     
    

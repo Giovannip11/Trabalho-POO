@@ -10,7 +10,7 @@ public class Filme {
     public String titulo;
     public String duracao;
     public String genero;
-    public List<Ator> a = new ArrayList();
+    public List<Ator> atores = new ArrayList();
     public Sessao s;
 
     public Filme(int idFilme, String titulo, String duracao, String genero) {
@@ -18,16 +18,18 @@ public class Filme {
         this.titulo = titulo;
         this.duracao = duracao;
         this.genero = genero;
+        this.atores = new ArrayList<>();
     }
     
     
     
-    public void addAtor (Ator at){
-       a.add(at);
+    public void addAtor (Ator ator){
+       atores.add(ator);
+       ator.addFilme(this);
     }
     public String mostrarAtores(){
         StringBuilder listaAtores = new StringBuilder();
-        for (Ator ator : a) {
+        for (Ator ator : atores) {
             listaAtores.append(ator.nome).append(", ");
         }
         return listaAtores.toString();

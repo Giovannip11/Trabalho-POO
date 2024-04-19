@@ -1,61 +1,66 @@
 
 package UVVFlix;
-     
+
 public class AppMain {
     public static void main(String[] args) {
         
-        //fazer um menu.
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        Ator ator1 = new Ator(1, "Leonardo DiCaprio", "Protagonista");
-       Ator ator2 = new Ator(2, "Brad Pitt", "Protagonista");
-       Ator ator3 = new Ator(3,"Jonan Hill", "Coadjuvante");
        
-       
-       Filme filme1 = new Filme(1, "O Regresso", "2h36m", "Western");
-       Filme filme2 = new Filme(2, "Encontro Marcado", "3h1m", "Romance/Fantasia");
-       
-       filme1.addAtor(ator1);
-       filme2.addAtor(ator2);
-       filme1.addAtor(ator3);
-       Sala sala1 = new Sala(1, 100, "3D", "Primeiro andar");
-       Sala sala2 = new Sala(2, 70, "IMAX", "Segundo andar");
+        Sala sala1 = new Sala(1, 100, "Tela Grande", "Local 1");
+        Sessao sessao1 = new Sessao(true, "18:00", sala1);
+        Filme filme1 = new Filme(1, "Filme Teste", "2h", "Ação");
+      
         
-       Sessao sessao1 = new Sessao(true, "19:30", sala1);
-       Sessao sessao2 = new Sessao(false, "20:30", sala2);
        
-       sala1.addSessao(sessao1);
-       sala2.addSessao(sessao2);
-       
-       InOut.MsgDeAviso("Filme", filme1.titulo);
-       InOut.MsgDeAviso("Atores: ",filme1.mostrarAtores());
-       
-       InOut.MsgDeAviso("Horario da sessão: ", sessao1.horario);
-       
-       
-       sessao1.addFilmes(filme2);
-       sessao1.addFilmes(filme1);
-       InOut.MsgDeAviso("Filmes:", sessao1.mostrarFilmes());
-        sessao1.iniciarSessao();
-       sessao1.terminarSessao();
+        int opcao;
+        do {
+            InOut.MsgDeAviso("Bem vindo ao menu principal", "=== MENU PRINCIPAL ===");
+            InOut.MsgDeAviso("Ações", "1: Adicionar Ator\n2: Mostrar Atores de um Filme\n3: Adicionar Filme a uma Sessão\n4: Mostrar Filmes de uma Sessão\n5: Iniciar Sessão\n6: Terminar Sessão\n7: Sair");
+            opcao = InOut.leInt("Escolha uma opção: ");
+            
+            switch (opcao) {
+                case 1:
                 
+                    int idAtor = InOut.leInt("Informe o ID do ator: ");
+                    String nomeAtor = InOut.leString("Informe o nome do ator: ");
+                    String papelAtor = InOut.leString("Informe o papel do ator: ");
+                    Ator novoAtor = new Ator(idAtor, nomeAtor, papelAtor);
+                    
+                    filme1.addAtor(novoAtor);
+                    break;
+                case 2:
+                 
+                    String tituloFilme = InOut.leString("Informe o título do filme: ");
+                    InOut.MsgDeAviso("Atores do Filme", filme1.mostrarAtores());
+                    break;
+                case 3:
+                    
+                    int idFilme = InOut.leInt("Informe o ID do filme: ");
+                    String tituloFilmeAdd = InOut.leString("Informe o título do filme: ");
+                    String duracaoFilme = InOut.leString("Informe a duração do filme: ");
+                    String generoFilme = InOut.leString("Informe o gênero do filme: ");
+                    Filme novoFilme = new Filme(idFilme, tituloFilmeAdd, duracaoFilme, generoFilme);
+                    
+                    sessao1.addFilmes(novoFilme);
+                    break;
+                case 4:
+                   
+                    InOut.MsgDeAviso("Filmes da Sessão", sessao1.mostrarFilmes());
+                    break;
+                case 5:
+                    
+                    sessao1.iniciarSessao();
+                    break;
+                case 6:
+                    
+                    sessao1.terminarSessao();
+                    break;
+                case 7:
+                   
+                    InOut.MsgDeAviso("Saindo do programa...", "");
+                  break;
+                  default:
+                      InOut.MsgDeErro("ERRO","Opção invalida!");
+            }
+        }while (opcao !=7  );
     }
 }
