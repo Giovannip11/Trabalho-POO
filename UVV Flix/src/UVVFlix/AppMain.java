@@ -7,7 +7,7 @@ public class AppMain {
        
         Sala sala1 = new Sala(1, 100, "Tela Grande", "Local 1");
         Sessao sessao1 = new Sessao(true, "18:00", sala1);
-        Filme filme1 = new Filme(1, "Filme Teste", "2h", "Ação");
+        Filme filme1 = new Filme(1, "Filme Teste", 2, "Ação");
       
         
        
@@ -36,7 +36,7 @@ public class AppMain {
                     
                     int idFilme = InOut.leInt("Informe o ID do filme: ");
                     String tituloFilmeAdd = InOut.leString("Informe o título do filme: ");
-                    String duracaoFilme = InOut.leString("Informe a duração do filme: ");
+                    long duracaoFilme = InOut.leLong("Informe a duração do filme: ");
                     String generoFilme = InOut.leString("Informe o gênero do filme: ");
                     Filme novoFilme = new Filme(idFilme, tituloFilmeAdd, duracaoFilme, generoFilme);
                     

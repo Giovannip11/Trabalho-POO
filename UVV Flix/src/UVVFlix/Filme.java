@@ -8,12 +8,12 @@ import java.util.List;
 public class Filme {
     public  int idFilme;
     public String titulo;
-    public String duracao;
+    public long duracao;
     public String genero;
     public List<Ator> atores = new ArrayList();
     public Sessao s;
 
-    public Filme(int idFilme, String titulo, String duracao, String genero) {
+    public Filme(int idFilme, String titulo, long duracao, String genero) {
         this.idFilme = idFilme;
         this.titulo = titulo;
         this.duracao = duracao;
