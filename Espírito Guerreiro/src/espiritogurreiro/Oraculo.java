@@ -8,9 +8,13 @@ public class Oraculo {
     public Guerreiro g;
     public String frase;
 
+    public void definirNome(){
+        this.nome=InOut.leString("Digite o nome do Oraculo");
+    }
     public void prologoIntroducao() {
 
-        InOut.MsgDeAviso("Prologo", "Bem vindo ao mundo  de Espirito Guerreiro");
+        InOut.MsgDeAviso("Prologo", "Bem vindo ao mundo  de Espirito Guerreiro\nNome do Oraculo"+this.nome"\nVidas do guerreiro"+g.qtdVidas);
+        
     }
 
     public void prologoPerdedor() {
@@ -28,6 +32,9 @@ public class Oraculo {
     int numOraculo = random.nextInt(6);
     InOut.MsgDeAviso("Level 1", "Neste Level voce jogará Par ou Impar contra o Oraculo, Boa sorte");
     int numGuerreiro = InOut.leInt("Digite um número de 0 a 5");
+    if ( numGuerreiro>5){
+    return false;
+    }
     String escolha = InOut.leString("Escolha entre Par ou Ímpar").toLowerCase();
     
     if (!(escolha.equals("par") || escolha.equals("impar"))) {
@@ -55,13 +62,13 @@ public class Oraculo {
         //2 = o que é o que é? e meu, mas meus amigos usam mais que eu.
         //3 = o que é o que é? da leite mas não e vaca.
         InOut.MsgDeAviso("Level 2", "Neste Level voce resolverá 3 charadas,boa sorte");
-        String resposta1= "A letra O"; 
+        int resposta1=1 ; 
         String resposta2="Meu nome";
         String resposta3="Leiteiro";
         
         
-        String palpite1 = InOut.leString("Charada 1: O que é o que é? Todo més tem menos abril");
-        if(palpite1.equals(resposta1)){
+        int palpite1 = InOut.leInt("Charada 1: O que é o que é? É o primeiro a nascer mas não o menor, sou a base de tudo e sem mim nada se pode fazer, sou a unidade e essencia da vida");
+        if(palpite1==1){
             InOut.MsgDeAviso("Level 2", "Resposta correta!");
         }else{
             InOut.MsgDeAviso("Level 2" , "Resposta Incorreta");
