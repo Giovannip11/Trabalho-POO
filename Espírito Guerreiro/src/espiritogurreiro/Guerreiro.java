@@ -8,17 +8,24 @@ public class Guerreiro {
     public int qtdVidas;
     public Bolsa myBolsa;
 
+    public Guerreiro(String nome, int qtdVidas, Bolsa myBolsa) {
+        this.nome = nome;
+        this.qtdVidas = qtdVidas;
+        this.myBolsa = myBolsa;
+    }
+
     public String vidaExtra() {
 
-        return null;
+        
+        return InOut.leString("Digite seu pedido de misericordia");
     }
     public int  sortearVidas(){
         Random random = new Random();
         
-        int qtdVidas = random.nextInt(4)+9;
+        int vidasSorteadas = random.nextInt(4)+9;
         
-        InOut.MsgDeAviso("Número de vidas:", ""+qtdVidas);
+        InOut.MsgDeAviso("Número de vidas:", ""+vidasSorteadas);
         
-        return qtdVidas;
+        return vidasSorteadas;
     }
 }

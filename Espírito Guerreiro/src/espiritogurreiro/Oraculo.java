@@ -8,12 +8,14 @@ public class Oraculo {
     public Guerreiro g;
     public String frase;
 
+
+
     public void definirNome(){
         this.nome=InOut.leString("Digite o nome do Oraculo");
     }
     public void prologoIntroducao() {
 
-        InOut.MsgDeAviso("Prologo", "Bem vindo ao mundo  de Espirito Guerreiro\nNome do Oraculo"+this.nome"\nVidas do guerreiro"+g.qtdVidas);
+        InOut.MsgDeAviso("Prologo", "Bem vindo ao mundo  de Espirito Guerreiro\nNome do Oraculo"+this.nome+"\nVidas do guerreiro"+g.qtdVidas);
         
     }
 
@@ -93,9 +95,9 @@ public class Oraculo {
         return true;
     }
 
-    public boolean decidirVidaExtra(String frase) {
+    public boolean decidirVidaExtra(String Misericordia) {
         
-        String[] palavras = frase.split("\\s+"); 
+        String[] palavras = Misericordia.split("\\s+"); 
         if (palavras.length > 5) {
             InOut.MsgDeAviso("Decisão do Oráculo:", "Vida extra concedida!");
             return true;
