@@ -1,5 +1,7 @@
 package espiritogurreiro;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /** 
@@ -281,8 +283,18 @@ public class InOut {
 	 * @param frase     que aparecera dentro da caixa de mensagem
 	 */
 	public static void MsgDeAviso (String cabecalho, String frase){
-		JOptionPane.showMessageDialog(null, frase, cabecalho, JOptionPane.WARNING_MESSAGE);
-	}
+            String iconPath = ".icons/oraculo.png";
+        
+            ImageIcon icon = new ImageIcon(InOut.class.getResource(iconPath));
+         Image image = icon.getImage();
+
+        Image novaImagem = image.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
+
+        ImageIcon iconRedimensionado = new ImageIcon(novaImagem);
+            
+        JOptionPane.showMessageDialog(null, frase, cabecalho, JOptionPane.WARNING_MESSAGE, iconRedimensionado);
+        
+    }
 	
 	
 /**
