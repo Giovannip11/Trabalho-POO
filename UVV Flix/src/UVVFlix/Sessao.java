@@ -14,7 +14,7 @@ public class Sessao {
         this.statusSessao = statusSessao;
         this.horario = horario;
         this.s = s;
-         this.filmes = new ArrayList <>();
+        
     }
 
     public void iniciarSessao() {

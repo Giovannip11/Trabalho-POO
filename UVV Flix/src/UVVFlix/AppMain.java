@@ -36,7 +36,7 @@ public class AppMain {
                     
                     int idFilme = InOut.leInt("Informe o ID do filme: ");
                     String tituloFilmeAdd = InOut.leString("Informe o título do filme: ");
-                    long duracaoFilme = InOut.leLong("Informe a duração do filme: ");
+                    long duracaoFilme = InOut.leLong("Informe a duração do filme em minutos: ");
                     String generoFilme = InOut.leString("Informe o gênero do filme: ");
                     Filme novoFilme = new Filme(idFilme, tituloFilmeAdd, duracaoFilme, generoFilme);
                     

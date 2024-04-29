@@ -15,7 +15,7 @@ public class Ator {
         this.idAtor = idAtor;
         this.nome = nome;
         this.papel = papel;
-         this.filmes = new ArrayList <>();
+         
     }
     public void addFilme(Filme filme){
         filmes.add(filme);
